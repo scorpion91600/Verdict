@@ -1,0 +1,259 @@
+/* css/components.css — boutons, cards, badges, timer, toasts */
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 56px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.header-nav { display: flex; gap: 1rem; align-items: center; }
+.header-nav a {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+.header-nav a:hover { color: var(--color-text); text-decoration: none; }
+
+/* ── Main ── */
+.main {
+  flex: 1;
+  padding: 2rem 1.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.15s, transform 0.1s;
+  text-decoration: none;
+}
+.btn:hover:not(:disabled) { opacity: 0.88; }
+.btn:active:not(:disabled) { transform: scale(0.98); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn--primary { background: var(--color-text); color: #fff; }
+.btn--accent  { background: var(--color-accent); color: #fff; }
+.btn--outline {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+.btn--full { width: 100%; }
+.btn--lg { padding: 0.875rem 2rem; font-size: 1.0625rem; }
+
+/* ── Cards ── */
+.card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+}
+
+/* ── Camp badges ── */
+.camp-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.camp-badge--pour    { background: var(--color-pour-bg);    color: var(--color-pour); }
+.camp-badge--contre  { background: var(--color-contre-bg);  color: var(--color-contre); }
+
+/* ── Category chip ── */
+.category-chip {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-muted);
+}
+
+/* ── Timer ── */
+.timer {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  transition: color 0.3s;
+}
+.timer--urgent {
+  color: var(--color-contre);
+  animation: pulse 1s infinite;
+}
+.timer--expired { color: var(--color-text-muted); }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+/* ── Textarea ── */
+.plea-textarea {
+  width: 100%;
+  min-height: 160px;
+  resize: vertical;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.875rem 1rem;
+  font-family: var(--font);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  transition: border-color 0.15s;
+}
+.plea-textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+/* ── Char count ── */
+.char-count { font-size: 0.8125rem; color: var(--color-text-muted); text-align: right; }
+.char-count--over { color: var(--color-danger); font-weight: 600; }
+
+/* ── Input ── */
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font);
+  font-size: 1rem;
+  color: var(--color-text);
+  background: var(--color-bg);
+  transition: border-color 0.15s;
+}
+.input:focus { outline: none; border-color: var(--color-accent); }
+
+/* ── Score bars ── */
+.scorebar {
+  display: grid;
+  grid-template-columns: 90px 1fr 48px;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 0.5rem;
+}
+.scorebar-label { font-size: 0.8125rem; color: var(--color-text-muted); }
+.scorebar-track {
+  height: 6px;
+  background: var(--color-bg-tertiary);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.scorebar-fill {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: 999px;
+  transition: width 0.6s ease;
+}
+.scorebar-value { font-size: 0.8125rem; color: var(--color-text-muted); text-align: right; }
+
+/* ── Score circle ── */
+.score-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--color-accent-bg);
+  border: 3px solid var(--color-accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+.score-circle__value {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-accent);
+}
+.score-circle__max {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* ── AI verdict ── */
+.ai-verdict {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-accent-bg);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+/* ── Badge "Moi" ── */
+.badge--you {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  background: var(--color-accent-bg);
+  color: var(--color-accent);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 0.25rem;
+  vertical-align: middle;
+}
+
+/* ── Toasts ── */
+.toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: var(--color-text);
+  color: #fff;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  white-space: nowrap;
+  z-index: 100;
+  pointer-events: none;
+}
+.toast--visible { opacity: 1; transform: translateX(-50%) translateY(0); }
+.toast--error   { background: var(--color-danger); }
+.toast--success { background: var(--color-accent); }
+.toast--info    { background: #444; }
+
+/* ── Divider ── */
+.divider { height: 1px; background: var(--color-border); margin: 1.5rem 0; }

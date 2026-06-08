@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verdict — Classement</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">⚖ Verdict</a>
+    <nav class="header-nav">
+      <a href="profile.html">Mon profil</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <div class="leaderboard-intro">
+      <h1>Classement général</h1>
+      <p style="color:var(--color-text-muted);font-size:.9rem;margin-top:.25rem;">
+        Les meilleures plaidoiries toutes parties confondues
+      </p>
+    </div>
+
+    <div id="leaderboard-list" class="leaderboard-list"></div>
+    <p id="leaderboard-empty" class="leaderboard-empty" hidden>
+      Aucune plaidoirie pour l'instant. Sois le premier !<br>
+      <a href="game.html" style="margin-top:.75rem;display:inline-block;" class="btn btn--accent">Jouer →</a>
+    </p>
+  </main>
+
+  <script type="module" src="js/leaderboard.js"></script>
+</body>
+</html>

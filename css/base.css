@@ -1,0 +1,40 @@
+/* css/base.css — reset, variables, typographie */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --color-bg:           #ffffff;
+  --color-bg-secondary: #f5f4f0;
+  --color-bg-tertiary:  #eceae3;
+  --color-text:         #1a1a18;
+  --color-text-muted:   #6b6a64;
+  --color-border:       rgba(0, 0, 0, 0.12);
+  --color-pour:         #0C447C;
+  --color-pour-bg:      #E6F1FB;
+  --color-contre:       #993C1D;
+  --color-contre-bg:    #FAECE7;
+  --color-accent:       #1D9E75;
+  --color-accent-bg:    #E1F5EE;
+  --color-danger:       #A32D2D;
+  --radius-sm:          6px;
+  --radius-md:          8px;
+  --radius-lg:          12px;
+  --font:               'Inter', system-ui, sans-serif;
+  --shadow-card:        0 1px 3px rgba(0,0,0,0.08);
+}
+
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: var(--font);
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3 { line-height: 1.25; font-weight: 600; }
+p { line-height: 1.6; }
+
+a { color: var(--color-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }

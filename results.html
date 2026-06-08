@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verdict — Résultats</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">⚖ Verdict</a>
+    <nav class="header-nav">
+      <a href="profile.html">Mon profil</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <div class="results-header">
+      <h1>Le verdict est tombé !</h1>
+      <p class="results-subject">
+        <span id="result-camp" class="camp-badge"></span>
+        <span id="result-subject"></span>
+      </p>
+    </div>
+
+    <div class="card" style="text-align:center; margin-bottom:1.5rem;">
+      <div class="score-circle">
+        <span id="score-total" class="score-circle__value">–</span>
+        <span class="score-circle__max">/ 100</span>
+      </div>
+      <p id="verdict-text" class="ai-verdict" style="max-width:420px;margin:0 auto;"></p>
+    </div>
+
+    <div class="card score-breakdown">
+      <h2>Détail des scores</h2>
+      <div class="scorebar">
+        <span class="scorebar-label">Conviction</span>
+        <div class="scorebar-track"><div id="bar-conviction" class="scorebar-fill" style="width:0%"></div></div>
+        <span id="score-conviction" class="scorebar-value"></span>
+      </div>
+      <div class="scorebar">
+        <span class="scorebar-label">Arguments</span>
+        <div class="scorebar-track"><div id="bar-arguments" class="scorebar-fill" style="width:0%"></div></div>
+        <span id="score-arguments" class="scorebar-value"></span>
+      </div>
+      <div class="scorebar">
+        <span class="scorebar-label">Originalité</span>
+        <div class="scorebar-track"><div id="bar-originality" class="scorebar-fill" style="width:0%"></div></div>
+        <span id="score-originality" class="scorebar-value"></span>
+      </div>
+      <div class="scorebar">
+        <span class="scorebar-label">Style</span>
+        <div class="scorebar-track"><div id="bar-style" class="scorebar-fill" style="width:0%"></div></div>
+        <span id="score-style" class="scorebar-value"></span>
+      </div>
+    </div>
+
+    <div class="results-actions">
+      <button id="to-leaderboard" class="btn btn--accent btn--full btn--lg">
+        Voir le classement du jour →
+      </button>
+      <a href="profile.html" class="btn btn--outline btn--full">Mon profil</a>
+    </div>
+  </main>
+
+  <script type="module" src="js/results.js"></script>
+</body>
+</html>

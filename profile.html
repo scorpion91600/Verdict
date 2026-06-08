@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verdict — Mon profil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">⚖ Verdict</a>
+    <nav class="header-nav">
+      <a href="leaderboard.html">Classement</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <div class="profile-hero">
+      <div class="profile-avatar">🧑</div>
+      <h1 id="profile-username" class="profile-username"></h1>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat">
+        <div id="profile-score" class="stat__value">–</div>
+        <div class="stat__label">Points totaux</div>
+      </div>
+      <div class="stat">
+        <div id="profile-games" class="stat__value">–</div>
+        <div class="stat__label">Parties jouées</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2 style="font-size:1rem;margin-bottom:1rem;">Historique</h2>
+    <div id="history-list" class="history-list"></div>
+    <p id="history-empty" class="history-empty" hidden>Aucune partie jouée pour l'instant.</p>
+
+    <div class="divider"></div>
+
+    <button id="logout-btn" class="btn btn--outline btn--full">Se déconnecter</button>
+  </main>
+
+  <script type="module" src="js/profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verdict — Plaidoirie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">⚖ Verdict</a>
+    <div id="timer" class="timer">01:30</div>
+  </header>
+
+  <main class="main">
+
+    <div class="subject-card card">
+      <div class="subject-card__meta">
+        <span id="subject-category" class="category-chip">Chargement…</span>
+      </div>
+      <p id="subject-text" class="subject-card__text" style="color:var(--color-text-muted)">Récupération du sujet…</p>
+    </div>
+
+    <div id="camp-section" class="camp-section" style="display:none">
+      <span id="camp-badge" class="camp-badge"></span>
+      <span id="camp-instruction" class="camp-section__instruction"></span>
+    </div>
+
+    <div id="pregame-bar" class="pregame-bar" style="display:none">
+      <button id="change-subject-btn" type="button" class="btn btn--outline">
+        🔀 Autre sujet
+      </button>
+      <button id="start-btn" type="button" class="btn btn--accent btn--lg">
+        Commencer →
+      </button>
+    </div>
+
+    <form id="plea-form" class="plea-section">
+      <div id="plea-section" hidden>
+        <label for="plea-textarea">Ta plaidoirie</label>
+        <textarea
+          id="plea-textarea"
+          class="plea-textarea"
+          placeholder="Rédige ta plaidoirie ici… sois convaincant(e) !"
+          maxlength="500"
+        ></textarea>
+        <div class="plea-section__footer">
+          <span id="char-count" class="char-count">0 / 500</span>
+          <button id="submit-btn" type="submit" class="btn btn--primary">
+            Soumettre
+          </button>
+        </div>
+      </div>
+    </form>
+
+  </main>
+
+  <script type="module" src="js/game-page.js"></script>
+</body>
+</html>
